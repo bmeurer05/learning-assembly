@@ -1,14 +1,14 @@
 section .data
-	mensagem db "Hello, world!", 10
-	tamanho equ $ - mensagem	
+	msg db "Hello, world!", 10
+	size equ $ - msg	
 
 section .text
 global _start
 _start:
 	mov rax, 1
 	mov rdi, 1
-	mov rsi, mensagem
-	mov rdx, tamanho
+	mov rsi, msg
+	mov rdx, size
 	syscall
 
 	mov rax, 60
