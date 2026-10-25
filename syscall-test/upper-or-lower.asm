@@ -6,13 +6,13 @@ section .data
 	msg 		db "Type a letter: "
 	msg_size	equ $ - msg
 
-	msg_end 	db "The letter o typed is: "
+	msg_end 	db "The letter typed is: "
 	msg_end_size	equ $ - msg_end
 
 	msg_upper	db "uppercase"
 	msg_upper_size 	equ $ - msg_upper
 
-	msg_lower	db "lowecase"
+	msg_lower	db "lowercase"
 	msg_lower_size 	equ $ - msg_lower
 
 	not_letter	db "The entry was not a letter"
@@ -41,7 +41,7 @@ _start:
 	jl .upper
 
 	.lower:
-		cmp byte [entry], 123
+		cmp byte [entry], 122
 		jg .not_letter
 
 		mov rax, 1
